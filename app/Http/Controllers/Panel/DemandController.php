@@ -12,6 +12,7 @@ class DemandController extends BaseController
     {
         $this->title = 'İstek/Öneri';
         $this->page = 'demand';
+        $this->upload = 'demand';
         $this->model = new Demand();
 
         $this->view = (object)array(

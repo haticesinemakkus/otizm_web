@@ -7,6 +7,8 @@ use App\Http\Controllers\Panel\AuthController;
 use App\Http\Controllers\Panel\AdminController;
 use App\Http\Controllers\Panel\CommentController;
 use App\Http\Controllers\Panel\DemandController;
+use App\Http\Controllers\Panel\NewsCategoryController;
+use App\Http\Controllers\Panel\NewsController;
 use App\Http\Controllers\Panel\PlanController;
 use App\Http\Controllers\Panel\ProjectCategoryController;
 use App\Http\Controllers\Panel\ProjectController;
@@ -36,6 +38,21 @@ Route::group(['prefix' => '/', 'middleware' => ['auth:admin']], function() {
         Route::post('/form/{unique?}', [PlanController::class, 'save'])->name('panel.plan_save');
         Route::delete('/delete', [PlanController::class, 'delete'])->name('panel.plan_delete');
     });
+
+    Route::group(['prefix' => '/news'], function () {
+        Route::any('/', [NewsController::class, 'list'])->name('panel.news_list');
+        Route::get('/form/{unique?}', [NewsController::class, 'form'])->name('panel.news_form');
+        Route::post('/form/{unique?}', [NewsController::class, 'save'])->name('panel.news_save');
+        Route::delete('/delete', [NewsController::class, 'delete'])->name('panel.news_delete');
+    });
+
+    Route::group(['prefix' => '/news_category'], function () {
+        Route::any('/', [NewsCategoryController::class, 'list'])->name('panel.news_category_list');
+        Route::get('/form/{unique?}', [NewsCategoryController::class, 'form'])->name('panel.news_category_form');
+        Route::post('/form/{unique?}', [NewsCategoryController::class, 'save'])->name('panel.news_category_save');
+        Route::delete('/delete', [NewsCategoryController::class, 'delete'])->name('panel.news_category_delete');
+    });
+
 
     Route::group(['prefix' => '/project_category'], function () {
         Route::any('/', [ProjectCategoryController::class, 'list'])->name('panel.project_category_list');

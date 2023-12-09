@@ -26,24 +26,11 @@
 
                 <div class="panel-container show">
                     <div class="panel-content">
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group mb-2">
-                                    <label class="form-label">Kullanıcı</label>
-                                    <input type="text" class="form-control" name="name" value="{{ old('name') ? old('name') : $item->name }}" required>
-                                </div>
-                                @error('name')
-                                    <span class="badge badge-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group mb-2">
-                                    <label class="form-label">Yorum</label>
-                                    <textarea rows="2" name="comment" class="form-control"  maxlength="250">{{ old('comment') ? old('comment') : $item->comment }}</textarea>
+                                    <label class="form-label">Başlık</label>
+                                    <textarea rows="2" name="name" class="form-control"  maxlength="250">{{ old('name') ? old('name') : $item->name }}</textarea>
                                 </div>
                             </div>
                         </div>

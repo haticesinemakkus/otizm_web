@@ -26,13 +26,13 @@ class Homecontroller extends Controller
     }
     public function contact()
     {
-        $setting = Settings::where('id',1)->first();
-        return view('web.pages.contact',compact('setting'));
+        $setting = Settings::where('id', 1)->first();
+        return view('web.pages.contact', compact('setting'));
     }
     public function contactForm(ContactFormRequest $request)
     {
         $params = $request->all();
-        try{
+        try {
 
             $data = [
                 'name' => $params['name'],
@@ -41,26 +41,42 @@ class Homecontroller extends Controller
                 'message1' => $params['message'],
             ];
 
-            // Mail::send('web.email.contact', $data, function ($message)
-            // {
-            //     $message->to('info@ozincitekstil.com.tr', config('app.name'))
-            //         ->subject('İletişim Formundan Mesaj Aldınız');
-            //     $message->from('info@ozincitekstil.com.tr', 'Websitesi İletişim Formu');
-            // });
             $message = 'Form başarıyla gönderildi';
 
             Mail::to('info@asdasdasd.com')->send(new MailableContact($data));
-        }
-        catch(Exception $e){
+        } catch (Exception $e) {
             $message  = 'Hata oluştu. Lütfen daha sonra tekrar deneyiniz';
         }
 
-        return redirect()->back()->with(['message'=>$message]);
-
+        return redirect()->back()->with(['message' => $message]);
     }
 
     public function references()
     {
         return view('web.pages.references');
+    }
+
+    public function denizliOtizm()
+    {
+        $setting = Settings::where('id', 1)->first();
+        return view('web.page.denizli_otizm', compact('setting'));
+    }
+
+    public function istanbulOtizm()
+    {
+        $setting = Settings::where('id', 1)->first();
+        return view('web.page.istanbul_otizm', compact('setting'));
+    }
+
+    public function purpose()
+    {
+        $setting = Settings::where('id', 1)->first();
+        return view('web.page.purpose', compact('setting'));
+    }
+
+    public function target()
+    {
+        $setting = Settings::where('id', 1)->first();
+        return view('web.page.target', compact('setting'));
     }
 }

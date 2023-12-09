@@ -30,8 +30,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Kullanıcı</th>
-                                    <th class="text-center">Yorum</th>
+                                    <th class="text-center">Başlık</th>
                                     <th class="text-center wd-120">Eklenme</th>
                                     <th class="text-center wd-80"></th>
                                 </tr>
@@ -61,11 +60,6 @@
                     {
                         data: 'name',
                         name: 'name',
-                        className: 'text-center'
-                    },
-                    {
-                        data: 'comment',
-                        name: 'comment',
                         className: 'text-center'
                     },
                     {

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Comment;
+use App\Models\News;
 use App\Models\Plan;
 use App\Models\Product;
 use App\Models\Project;
@@ -34,7 +36,10 @@ class ViewServiceProvider extends ServiceProvider
             $plans = Plan::get();
             $projects = Project::get();
             $project_categories = ProjectCategory::get();
-            $view->with('setting',$setting)->with('plans',$plans)->with('projects',$projects)->with('project_categories', $project_categories);
+            $comments = Comment::get();
+            $news = News::get();
+            $view->with('setting',$setting)->with('plans',$plans)->with('projects',$projects)->with('project_categories', $project_categories)->with('comments',$comments)
+            ->with('news',$news);
         });
     }
 }

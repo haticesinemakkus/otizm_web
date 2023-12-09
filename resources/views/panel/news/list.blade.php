@@ -30,8 +30,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Kullanıcı</th>
-                                    <th class="text-center">Yorum</th>
+                                    <th class="text-center">Resim</th>
+                                    <th class="text-center">Kategori</th>
+                                    <th class="text-center">Başlık</th>
                                     <th class="text-center wd-120">Eklenme</th>
                                     <th class="text-center wd-80"></th>
                                 </tr>
@@ -59,13 +60,21 @@
                         className: 'text-center'
                     },
                     {
-                        data: 'name',
-                        name: 'name',
+                        render: function(data, type, row) {
+                            return '<img width="60" height:"60" src="' + row.image + '">';
+                        },
+                        data: 'image',
+                        name: 'image',
                         className: 'text-center'
                     },
                     {
-                        data: 'comment',
-                        name: 'comment',
+                        data: 'category_id',
+                        name: 'category_id',
+                        className: 'text-center'
+                    },
+                    {
+                        data: 'title',
+                        name: 'titl',
                         className: 'text-center'
                     },
                     {

@@ -22,7 +22,6 @@ class BaseController extends Controller
 	    	'model' => $this->model,
 	    	'upload' => $this->upload,
 	    	'view' => $this->view,
-			'size' => $this->size,
 	    );
 
 	    View::share('container', $container);

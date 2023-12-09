@@ -14,6 +14,7 @@ class ProjectController extends BaseController
     {
         $this->title = 'Projelerimiz';
         $this->page = 'project';
+        $this->upload = 'project';
         $this->model = new Project();
 
         $this->view = (object)array(
@@ -24,6 +25,14 @@ class ProjectController extends BaseController
 
         View::share('categories', ProjectCategory::all());
         parent::__construct();
+    }
+
+    protected function datatableHook($obj)
+    {
+        return $obj
+            ->editColumn('category_id', function ($item) {
+                return $item->category->title;
+            });
     }
 
 }

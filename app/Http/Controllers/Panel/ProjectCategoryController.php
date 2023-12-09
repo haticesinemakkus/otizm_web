@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Http\Controllers\Controller;
 use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 
-class ProjectCategoryController extends Controller
+class ProjectCategoryController extends BaseController
 {
     use BasePattern;
 

@@ -232,7 +232,7 @@ a:hover {
 .v-middle {
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 50%;
     left: 0;
     -webkit-transform: translate(0%, -50%);
     transform: translate(0%, -50%);
@@ -435,7 +435,7 @@ a:hover {
 }
 
 .navbar .navbar-nav .nav-link {
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 500;
     color: #eee;
     letter-spacing: .5px;
@@ -490,7 +490,7 @@ a:hover {
      [ 04 Start Header ]
 -----------------------------------------------------------------*/
 .header {
-    max-height: 75vh;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -651,8 +651,8 @@ a:hover {
 }
 
 .hero .feat-item.active .text-center {
-    margin-top: -25px;
-    padding-top: 75px;
+    /* margin-top: -25px; */
+    /* padding-top: 75px; */
     -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -1992,4 +1992,287 @@ footer p {
     }
 }
 
-/*# sourceMappingURL=style.css.map */
+.access-helper-title {
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: bold;
+    color: var(--color-8);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: var(--font-xbold);
+    user-select: none
+}
+
+.access-helper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: auto;
+    z-index: 9999
+}
+
+.access-helper .row {
+    display: flex;
+    align-items: flex-start;
+    width: auto;
+    height: 100%
+}
+
+.access-helper-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin-top: 180px;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    user-select: none;
+    appearance: none;
+    position: relative;
+    right: -2px;
+    z-index: 9999999
+}
+
+.access-helper-open:hover {
+    box-shadow: var(--shadow-medium)
+}
+
+.access-helper-open svg {
+    width: 24px
+}
+
+.access-helper-content {
+    width: 200px;
+    height: 100%;
+    background: white;
+    position: relative;
+    z-index: 999999;
+    padding: 15px;
+    margin-right: -200px;
+    transition: all 300ms ease-in-out;
+    box-shadow: var(--shadow-medium)
+}
+
+.access-helper-content.opened {
+    margin-right: 0px
+}
+
+.access-helper-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto
+}
+
+.access-helper-font-size {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%
+}
+
+.access-helper-item {
+    background: var(--color-9);
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    appearance: none;
+    transition: all 200ms ease-in-out;
+    height: 45px;
+    text-transform: uppercase;
+    font-family: var(--font-bold);
+    margin-bottom: 18px
+}
+
+.access-helper-item:hover {
+    background: var(--color-8)
+}
+
+.access-helper-item:active {
+    transform: scale(0.95)
+}
+
+.access-helper-font-size .access-helper-item {
+    margin-right: 8px
+}
+
+.access-helper-font-size .access-helper-item:last-child {
+    margin-right: 0px
+}
+
+.access-helper-close {
+    background: #004fff;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    appearance: none;
+    transition: all 200ms ease-in-out;
+    height: 35px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    font-family: var(--font-bold)
+}
+
+.access-helper-close:hover {
+    opacity: .9
+}
+
+.access-helper-close:active {
+    transform: scale(0.95)
+}
+
+.access-helper-item.active {
+    background: var(--secondary)
+}
+
+.access-readable-font * {
+    font-family: sans-serif !important
+}
+
+.access-underline-links a {
+    text-decoration: underline !important
+}
+
+.access-highlight-links a {
+    background: yellow !important;
+    color: black !important
+}
+
+.access-image-greyscale img {
+    filter: grayscale(1) !important
+}
+
+.access-invert-colors * {
+    filter: invert(1) !important
+}
+
+.access-remove-animations * {
+    animation: none !important
+}
+
+.access-choose-color .footer * {
+    background: var(--a-color) !important
+}
+
+.access-choose-color .footer {
+    background: var(--a-color) !important
+}
+
+.access-choose-color .header * {
+    background: var(--a-color) !important
+}
+
+.access-choose-color main * {
+    background: var(--a-color) !important
+}
+
+.access-choose-colors {
+    margin-bottom: 18px;
+    display: none
+}
+
+.access-choose-color .access-choose-colors {
+    display: block
+}
+
+.access-assistant {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0000007d;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.access-assistant.opened {
+    display: flex
+}
+
+.access-assistant-content {
+    width: 60%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-hover);
+    position: relative
+}
+
+.access-assistant-content h2 {
+    font-size: 2rem;
+    font-family: var(--font-bold);
+    margin-top: 0;
+    margin-bottom: 15px
+}
+
+.access-assistant-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    font-size: 20px
+}
+
+.access-assistant-item {
+    margin-bottom: 8px
+}
+
+.access-assistant-item:last-child {
+    margin-bottom: 0px
+}
+
+.access-assistant-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 32px;
+    height: 32px;
+    background: var(--color-8);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease
+}
+
+.access-assistant-close:hover {
+    background: var(--color-9)
+}
+
+
+.underline-links a {
+    text-decoration: underline !important;
+}

@@ -151,6 +151,24 @@
                                 <span class="nav-link-text" data-i18n="nav.ui_components_buttons">Projelerimiz</span>
                             </a>
                         </li>
+                        <li class="{{ Helpers::activeMenu(['project_category']) }}">
+                            <a href="{{ route('panel.project_category_list') }}" data-filter-tags="Proje Kategorşleri">
+                                <i class="fal fa-chess-king"></i>
+                                <span class="nav-link-text" data-i18n="nav.ui_components_buttons">Proje Kategorileri</span>
+                            </a>
+                        </li>
+                        <li class="{{ Helpers::activeMenu(['news']) }}">
+                            <a href="{{ route('panel.news_list') }}" data-filter-tags="Haberler">
+                                <i class="fal fa-chess-king"></i>
+                                <span class="nav-link-text" data-i18n="nav.ui_components_buttons">Haberler</span>
+                            </a>
+                        </li>
+                        <li class="{{ Helpers::activeMenu(['news_category']) }}">
+                            <a href="{{ route('panel.news_category_list') }}" data-filter-tags="Haber Kategorileri">
+                                <i class="fal fa-chess-king"></i>
+                                <span class="nav-link-text" data-i18n="nav.ui_components_buttons">Haber Kategorileri</span>
+                            </a>
+                        </li>
                         <li class="{{ Helpers::activeMenu(['plan']) }}">
                             <a href="{{ route('panel.plan_list') }}" data-filter-tags="Planlarımız">
                                 <i class="fal fa-chess-king"></i>
